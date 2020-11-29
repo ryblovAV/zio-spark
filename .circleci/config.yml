@@ -11,7 +11,7 @@ aliases:
   - &restore_cache_dependencies
     name: "Restore dependencies from the cache"
     keys:
-      - sbt-dependencies-{{ checksum "**/*.sbt" }}-{{ checksum "project/build.properties" }}
+      - sbt-dependencies-{{ checksum "build.sbt" }}-{{ checksum "project/build.properties" }}
       # fallback to using the latest cache if no exact match is found
       - sbt-dependencies-
 
@@ -26,7 +26,7 @@ aliases:
       - ~/.ivy2
       - ~/.sbt
       - ~/.cache
-    key: sbt-dependencies-{{ checksum "**/*.sbt" }}-{{ checksum "project/build.properties" }}
+    key: sbt-dependencies-{{ checksum "build.sbt" }}-{{ checksum "project/build.properties" }}
 
   - &fmt_check
     name: "Check code format"
